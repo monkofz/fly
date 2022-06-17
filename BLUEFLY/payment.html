@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0px 0px 0px 0px;
+            padding: 15px 0px 10px 0px;
+        }
+         .navtop {
+            justify-content: space-around;
+            padding: 0px 0px 30px 00px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            display: flex;
+            margin: auto;
+        }
+        .navtwo {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 150px 10px 150px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navtwo>a{
+            color: black;
+            text-decoration: none;
+        }
+        .logo{
+            width: 200px;
+            height: 33px;
+        }
+        .carticon{
+            width: 20px;
+            height: 20px;
+        }
+        .usericon{
+            width: 20px;
+            height: 20px;
+
+        }
+        #clr{
+            color: red;
+        }
+        .speed{ 
+            color: rgb(255, 255, 255);
+             background: black;
+             overflow: hidden;
+             height: 40px;
+            margin: 20px 0px 20px 0px;
+             }
+        .textone{
+            position: absolute;
+            display: block;
+            font-size: 15px;
+            animation-duration: 7s;
+            animation-timing-function:ease-in-out;
+            animation-iteration-count: infinite;
+            animation-name: moveone;
+        }
+        @keyframes moveone {
+	    0%, 8.3% { left: -100%; opacity: 0; }
+        8.3%,25% { left: 35%; opacity: 1; }
+        33.33%, 100% { left: 110%; opacity: 0; }
+        }
+        .footer{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            background-color: #E6E6E6;
+            justify-content: space-around;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: auto;
+            flex-wrap: wrap;
+            display: flex;
+            position: absolute;
+            bottom:0;
+            width: 100%;
+        }
+        .footerone>div{
+            margin: 25px 25px 25px 25px;
+        }
+        #loginbox{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: auto;
+            justify-content: space-around;
+            align-items:center;
+            margin: auto;
+            flex-wrap: wrap;
+            display: flex;
+            width: 80%;
+            padding-bottom: 20px;
+        }
+
+        .loginform{
+           width: 280px;
+           height:280px;
+           padding: 3% 5% 0% 5%;
+           margin: auto;
+           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+           text-align:left;
+           border-radius: 10px;
+           display: block;
+        }
+        input{
+            display: block;
+            margin: 10%;
+            width: 80%;
+            height: 30px;
+            text-align: left;
+            margin-left: 10%;
+        }
+        #login{
+            margin-left: 10%;
+            color: whitesmoke;
+            background-color: black;
+            border-radius: 8px;
+            padding: 5% 10% 5% 10%;
+        }
+        .loginform h5{
+            font-size: 30px;
+            text-align: center;
+        }
+        #frmhd{
+            text-align: center;
+        }
+        .footerone>button{
+            margin-left:20px;
+        }
+        .navtwo>a:hover{
+            background-color: orangered;
+            color: white;
+            padding: 5px;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+    </style>
+    <title>Payment</title>
+</head>
+<body>
+  <div class="navtop">
+      <img class="usericon" src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+      <img class="logo" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243">
+      <a href="../BLUEFLY/cart.html">  <img class="carticon" src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png"></a>
+  </div>
+  <div class="navtwo">
+    <a href="../BLUEFLY/signup.html"> Sign Up </a> 
+    <a href="../BLUEFLY/mens.html"> MEN </a> 
+    <a href="../BLUEFLY/womens.html"> WOMEN </a> 
+    <a href="../BLUEFLY/index.html"> Home </a> 
+    <a href="../BLUEFLY/cart.html"> CART </a> 
+    <a href="../BLUEFLY/login.html"> Log In </a> 
+</div>
+
+<div class="speed">
+    <p class="textone">WELCOME TO BLUEFLY : Luxury brands at discounted prices</p>
+</div>
+
+<div id="loginbox">
+    
+    <form class="loginform">
+    <input placeholder="Name" id="email" type="email">
+    <input placeholder="Credit Card Number" id="email" type="number">
+    <input placeholder="PIN" id="password" type="password">
+    <button id="login">Pay Now</button>
+    </form>
+    </div>  
+
+
+<div class="footer">
+
+    <div class="footerone">
+     <div class="foothead">ABOUT US</div> 
+     <div> Contact Us</div>
+     <div> Frequently Asked Questions</div>
+     <div> Shipping and Returns</div>
+     <div> Pre Owned Guide</div>
+    </div>
+
+
+    <div class="footerone">
+    <div> Sell on Bluefly</div>
+    <div> Privacy Policy</div>
+    <div> Terms and Conditions</div>
+    <div> Do Not Sell My Personal Information</div>
+    </div>
+
+
+    <div class="footerone">
+    <div class="foothead">SIGN UP AND SAVE</div> 
+    <input placeholder="email" type="email">
+    <button>Subsccribe</button>
+    </div>
+
+
+    <div class="footerone">
+     
+
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

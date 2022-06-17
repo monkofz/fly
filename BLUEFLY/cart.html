@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0px 0px 0px 0px;
+            padding: 15px 0px 10px 0px;
+        }
+         .navtop {
+            justify-content: space-around;
+            padding: 0px 0px 30px 00px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            display: flex;
+            margin: auto;
+        }
+        .navtwo {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 150px 10px 150px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navtwo>a{
+            color: black;
+            text-decoration: none;
+        }
+        .navtwo>a:hover{
+            background-color: orangered;
+            color: white;
+            padding: 5px;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+        .logo{
+            width: 200px;
+            height: 33px;
+        }
+        .carticon{
+            width: 20px;
+            height: 20px;
+        }
+        .usericon{
+            width: 20px;
+            height: 20px;
+
+        }
+       
+        .speed{ 
+            color: rgb(255, 255, 255);
+             background: black;
+             overflow: hidden;
+             height: 40px;
+            margin: 20px 0px 20px 0px;
+             }
+        .textone{
+            position: absolute;
+            display: block;
+            font-size: 15px;
+            animation-duration: 7s;
+            animation-timing-function:ease-in-out;
+            animation-iteration-count: infinite;
+            animation-name: moveone;
+        }
+        @keyframes moveone {
+	    0%, 8.3% { left: -100%; opacity: 0; }
+        8.3%,25% { left: 35%; opacity: 1; }
+        33.33%, 100% { left: 110%; opacity: 0; }
+        }
+
+        .prodlist{
+            display: grid;
+            grid-template-columns: repeat(1fr,4fr);
+            grid-template-rows: auto;
+            justify-content: space-between;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: auto;
+            flex-wrap: wrap;
+            display: flex;
+            position: absolute;
+            width: 80%;    
+        }
+        #products{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            justify-content: space-between;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: auto;
+            flex-wrap: wrap;
+            
+        }
+        #products>div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            width: 160px;
+            margin: 20px;
+            padding: 10px 0px 10px 0px;
+            border-radius: 10px;
+        }
+        #products>div>img{
+            width:130px;
+            height:180px;
+            border-radius: 10px;
+        }
+        #filter{
+            width:100px;
+            height:100px;
+        }
+        #products>div>button{
+            width:80px;
+            height: 30px;
+            color: whitesmoke;
+            background-color: black;
+            border-radius: 5px;
+        }
+        #products>div>h2{
+            font-size: 12px;
+        }
+       #billcov{
+        width:180px;
+        height: 100px;
+        padding:15px 20px 0px 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+        border-radius: 10px;
+       }
+       #billcov>h2{
+           display: inline;
+       }
+       #bill{
+        display: inline;
+        font-size: 25px;
+       }
+       #billcov>button{
+           margin-top: 30px;
+           color: whitesmoke;
+            background-color: black;
+            border-radius: 5px; 
+
+       }
+        
+    </style>
+    <title>cart</title>
+</head>
+<body>
+  <div class="navtop">
+      <img class="usericon" src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+      <img class="logo" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243">
+      <a href="../BLUEFLY/cart.html">  <img class="carticon" src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png"></a>
+  </div>
+  <div class="navtwo">
+    <a href="../BLUEFLY/signup.html"> Sign Up </a> 
+    <a href="../BLUEFLY/mens.html"> MEN </a> 
+    <a href="../BLUEFLY/womens.html"> WOMEN </a> 
+    <a href="../BLUEFLY/index.html"> Home </a> 
+    <a href="../BLUEFLY/cart.html"> CART </a> 
+    <a href="../BLUEFLY/login.html"> Log In </a> 
+   
+</div>
+
+<div class="speed">
+    <p class="textone">WELCOME TO BLUEFLY : Luxury brands at discounted prices</p>
+</div>
+<div class="prodlist">
+<div id="products"></div>
+<div id="billcov">
+<h2>Total :</h2>
+<h3 id="bill">0</h3>
+<button onclick="window.location.href='../BLUEFLY/payment.html'">Pay Now</button>
+</div>
+</div>
+
+
+</body>
+<script>
+    let productsCont=document.getElementById("products");
+    let billlist=document.getElementById("bill");
+    let cartLs=JSON.parse(localStorage.getItem("cart-page")) || [];
+    let totalPrice=0;
+    function displayProducts(productData=[]){
+    productsCont.innerHTML="";
+    let totalPrice=0;
+productData.forEach(function(element){
+    totalPrice+= Number(element.price);
+    let product=document.createElement("div");
+    let bill=document.createElement("div");
+    let img=document.createElement("img");
+    img.src=element.img;
+    let name=document.createElement("h2");
+    name.textContent=element.name;
+    let nam=document.createElement("h2");
+    nam.textContent=element.name;
+    let price=document.createElement("h3");
+    price.textContent=element.price;
+    let category=document.createElement("p");
+    category.textContent=element.catagory;
+    let DeleteCart=document.createElement("button");
+    DeleteCart.innerText="Delete"
+    DeleteCart.addEventListener("click",function(){
+       
+        Delete(element.productID);
+        
+    })
+    product.append(img,nam,price,DeleteCart);
+    productsCont.append(product)
+    billlist.innerText=totalPrice
+    
+})
+}
+    displayProducts(cartLs);
+
+    function Delete(id){
+        let deleted=cartLs.filter(function(el){
+            return el.productID!=id;
+        })
+        cartLs=deleted;
+        localStorage.setItem("cart-page",JSON.stringify(cartLs));
+        displayProducts(cartLs);    
+    }
+</script>
+</html>

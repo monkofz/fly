@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0px 0px 0px 0px;
+            padding: 15px 0px 10px 0px;
+        }
+         .navtop {
+            justify-content: space-around;
+            padding: 0px 0px 30px 00px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            display: flex;
+            margin: auto;
+        }
+        .navtwo {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 150px 10px 150px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navtwo>a{
+            color: black;
+            text-decoration: none;
+        }
+        .logo{
+            width: 200px;
+            height: 33px;
+        }
+        .carticon{
+            width: 20px;
+            height: 20px;
+        }
+        .usericon{
+            width: 20px;
+            height: 20px;
+
+        }
+        #clr{
+            color: red;
+        }
+        .speed{ 
+            color: rgb(255, 255, 255);
+             background: black;
+             overflow: hidden;
+             height: 40px;
+            margin: 20px 0px 20px 0px;
+             }
+        .textone{
+            position: absolute;
+            display: block;
+            font-size: 15px;
+            animation-duration: 7s;
+            animation-timing-function:ease-in-out;
+            animation-iteration-count: infinite;
+            animation-name: moveone;
+        }
+        @keyframes moveone {
+	    0%, 8.3% { left: -100%; opacity: 0; }
+        8.3%,25% { left: 35%; opacity: 1; }
+        33.33%, 100% { left: 110%; opacity: 0; }
+        }
+        .prodlist{
+            display: grid;
+            grid-template-columns: repeat(1fr,4fr);
+            grid-template-rows: auto;
+            justify-content: space-around;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: 0;
+            flex-wrap: wrap;
+            display:flex;
+            position: absolute;
+            width: 90%;
+            display:flex;
+        }
+        #products{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto; 
+            justify-content: space-between;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+        #products>div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            margin: 20px;
+            padding: 10px 0px 10px 0px;
+            border-radius: 10px;
+        }
+        #products>div>img{
+            width:300px;
+            height:380px;
+            border-radius: 10px;
+        }
+        #filter{
+            width:100px;
+            height:50px;
+            margin: 30px 0px 0px 30px;
+            text-align: center;
+        }
+        #products>div>button{
+            width:110px;
+            height: 30px;
+            color: whitesmoke;
+            background-color: black;
+            border-radius: 5px;
+        }
+        #products>div>h2{
+            font-size: 16px;
+        }
+        .navtwo>a:hover{
+            background-color: orangered;
+            color: white;
+            padding: 5px;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+       
+    </style>
+    <title>Womens</title>
+</head>
+<body>
+  <div class="navtop">
+      <img class="usericon" src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+      <img class="logo" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243">
+      <a href="../BLUEFLY/cart.html">  <img class="carticon" src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png"></a>
+  </div>
+  <div class="navtwo">
+    <a href="../BLUEFLY/signup.html"> Sign Up </a> 
+    <a href="../BLUEFLY/mens.html"> MEN </a> 
+    <a href="../BLUEFLY/womens.html"> WOMEN </a> 
+    <a href="../BLUEFLY/index.html"> Home </a> 
+    <a href="../BLUEFLY/cart.html"> CART </a> 
+    <a href="../BLUEFLY/login.html"> Log In </a> 
+</div>
+
+<div class="speed">
+    <p class="textone">WELCOME TO BLUEFLY : Luxury brands at discounted prices</p>
+</div>
+
+<div class="prodlist">
+    <select id="filter">
+    <option value="all">All Products</option>
+    <option value="Casual">Casual</option>
+    <option value="party">Party</option>
+    <option value="workout">workout</option>
+    </select>
+    <div id="products"></div>
+</div>
+
+
+</body>
+<script>
+
+productData=[
+    {
+    brand: "Vishudh",
+    name: "Women Kurta and Dupatta",
+    price: "400",
+    size: "X,XX,XXL",
+    productID: "women1",
+    catagory: "Casual",
+    img: "https://rukminim1.flixcart.com/image/533/640/krce64w0/kurta/d/q/m/m-vnku010825-vishudh-original-imag55phemdpzdth.jpeg?q=50",
+  },
+  {
+    brand: "ZOYA GARMENTSS ",
+    name: "balck bellaWomen Kurta",
+    price: "415",
+    size: "X,M,L,XX,XXL",
+    productID: "women2",
+    catagory: "Casual",
+    img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/1/4/146117301_1_7fcd0574.jpg?rnd=20200526195200",
+  },
+  {
+    brand: "AJ Art",
+    name: "Women Kurta",
+    price: "799",
+    size: "M,L,XX,XXS",
+    productID: "women3",
+    catagory: "party",
+    img: "https://rukminim1.flixcart.com/image/533/640/kmxsakw0/kurta/c/l/l/s-aj-517-aj-art-original-imagfqhc5bznnjhf.jpeg?q=50",
+  },
+  {
+    brand: "Ap'pulse",
+    name: "Solid Women High Neck Black T-Shirt",
+    price: "2000",
+    size: "X,M,L,XXS,XXL",
+    productID: "women4",
+    catagory: "workout",
+    img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/i/n/ind158-pnk_1_3dc181e4.jpg?rnd=20200526195200",
+  },
+  {
+    brand: "GAP",
+    name: "Solid Women Track Suit",
+    price: "1347",
+    size: "X,M,L",
+    productID: "women5",
+    catagory: "workout",
+    img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/r/t/rtor0011_1_67335460.jpg?rnd=20200526195200",
+  },
+  {
+    brand: "Bady Moo",
+    name: "Aesthetic Balck Bella",
+    price: "1347",
+    size: "X,M,L",
+    productID: "women6",
+    catagory: "workout",
+    img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/a/h/ahtufrgfe19523_1_e0416277.jpg?rnd=20200526195200",
+  },
+]
+let productsCont=document.getElementById("products");
+let filter=document.getElementById("filter");
+let cartLs=JSON.parse(localStorage.getItem("cart-page")) || [];
+function displayProducts(productData=[]){
+    productsCont.innerHTML="";
+productData.forEach(function(element){
+    let product=document.createElement("div");
+    let img=document.createElement("img");
+    img.src=element.img;
+    let price=document.createElement("p");
+    price.textContent=element.price;
+    let name=document.createElement("h2");
+    name.textContent=element.brand;
+    let category=document.createElement("p");
+    category.textContent=element.catagory;
+    let brand=document.createElement("p");
+    brand.textContent=element.name;
+    let addToCart=document.createElement("button");
+    addToCart.innerText="Add To Cart"
+    addToCart.addEventListener("click",function(){
+       if(addToCartFunc(element.productID)===true){
+           alert("Product Added to Cart Successfully")
+           cartLs.push(element);
+           localStorage.setItem("cart-page",JSON.stringify(cartLs));
+       }else{
+        alert("product already in the cart");
+       }
+        
+    })
+    product.append(img,name,brand,price,addToCart);
+    productsCont.append(product)
+})
+}
+
+displayProducts(productData);
+
+filter.addEventListener("change",function(){
+    if(filter.value==="all"){
+        displayProducts(productData);
+    }else{
+        let filtered=productData.filter
+        (function(element){
+            return element.catagory===filter.value;
+        })
+        displayProducts(filtered);
+    }
+})
+function addToCartFunc(id){
+for(let i=0;i<cartLs.length;i++)
+{
+    if(cartLs[i].productID == id){
+        return false;
+    }
+}
+return true;
+}
+</script>
+</html>

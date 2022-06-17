@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0px 0px 0px 0px;
+            padding: 15px 0px 10px 0px;
+        }
+         .navtop {
+            justify-content: space-around;
+            padding: 0px 0px 30px 00px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            display: flex;
+            margin: auto;
+        }
+        .navtwo {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 150px 10px 150px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navtwo>a{
+            color: black;
+            text-decoration: none;
+        }
+        .logo{
+            width: 200px;
+            height: 33px;
+        }
+        .carticon{
+            width: 20px;
+            height: 20px;
+        }
+        .usericon{
+            width: 20px;
+            height: 20px;
+
+        }
+        #clr{
+            color: red;
+        }
+        .speed{ 
+            color: rgb(255, 255, 255);
+             background: black;
+             overflow: hidden;
+             height: 40px;
+            margin: 20px 0px 20px 0px;
+             }
+        .textone{
+            position: absolute;
+            display: block;
+            font-size: 15px;
+            animation-duration: 7s;
+            animation-timing-function:ease-in-out;
+            animation-iteration-count: infinite;
+            animation-name: moveone;
+        }
+        @keyframes moveone {
+	    0%, 8.3% { left: -100%; opacity: 0; }
+        8.3%,25% { left: 35%; opacity: 1; }
+        33.33%, 100% { left: 110%; opacity: 0; }
+        }
+        .prodlist{
+            display: grid;
+            grid-template-columns: repeat(1fr,4fr);
+            grid-template-rows: auto;
+            justify-content: space-around;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: 0;
+            flex-wrap: wrap;
+            display:flex;
+            position: absolute;
+            width: 90%;
+            display:flex;
+        }
+        #products{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto; 
+            justify-content: space-between;
+            align-items: top;
+            padding: 10px 30px 10px 30px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+        #products>div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            margin: 20px;
+            padding: 10px 0px 10px 0px;
+            border-radius: 10px;
+        }
+        #products>div>img{
+            width:300px;
+            height:380px;
+            border-radius: 10px;
+        }
+        #filter{
+            width:100px;
+            height:50px;
+            margin: 30px 0px 0px 30px;
+            text-align: center;
+        }
+        #products>div>button{
+            width:110px;
+            height: 30px;
+            color: whitesmoke;
+            background-color: black;
+            border-radius: 5px;
+        }
+        #products>div>h2{
+            font-size: 16px;
+        }
+        .navtwo>a:hover{
+            background-color: orangered;
+            color: white;
+            padding: 5px;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+    </style>
+    <title>Mens</title>
+</head>
+<body>
+  <div class="navtop">
+      <img class="usericon" src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+      <img class="logo" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243">
+      <a href="../BLUEFLY/cart.html">  <img class="carticon" src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png"></a>
+  </div>
+  <div class="navtwo">
+    <a href="../BLUEFLY/signup.html"> Sign Up </a> 
+    <a href="../BLUEFLY/mens.html"> MEN </a> 
+    <a href="../BLUEFLY/womens.html"> WOMEN </a> 
+    <a href="../BLUEFLY/index.html"> Home </a> 
+    <a href="../BLUEFLY/cart.html"> CART </a> 
+    <a href="../BLUEFLY/login.html"> Log In </a> 
+</div>
+
+<div class="speed">
+    <p class="textone">WELCOME TO BLUEFLY : Luxury brands at discounted prices</p>
+</div>
+
+<div class="prodlist">
+    <select id="filter">
+    <option value="all">All Products</option>
+    <option value="shirt">shirt</option>
+    <option value="set">set</option>
+    <option value="pant">pant</option>
+    </select>
+    <div id="products"></div>
+</div>
+
+
+</body>
+<script>
+
+productData=[
+  {
+    brand: "AJ Art",
+    name: "Shirt Blue Stripe",
+    price: "799",
+    size: "M,L,XX,XXS",
+    productID: "men3",
+    catagory: "shirt",
+    img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/10/49d89b2e-c9dc-4335-9ca1-4764d2db42101615358127542-1.jpg",
+  },
+  {
+    brand: "Ap'pulse",
+    name: "Pulse Runners TeeShirt",
+    price: "2000",
+    size: "X,M,L,XXS,XXL",
+    productID: "men4",
+    catagory: "shirt",
+    img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1915280/2022/3/4/f32024b5-508f-4d79-bfa3-a10d41eb1edd1646390379781-HRX-by-Hrithik-Roshan-Men-Navy-Blue-Abstract-Printed-Active--1.jpg",
+  },
+  {
+    brand: "GAP",
+    name: "Green Shirt + Black Denim",
+    price: "1347",
+    size: "X,M,L",
+    productID: "men5",
+    catagory: "set",
+    img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1758578/2017/5/12/11494569522819-WROGN-Men-Shirts-8521494569522516-1.jpg",
+  },
+  {
+    brand: "Bady Moo",
+    name: "Black Shirt + Jeans",
+    price: "1347",
+    size: "X,M,L",
+    productID: "men6",
+    catagory: "set",
+    img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12317906/2022/5/24/1e9974f1-45b1-484b-a4d2-86777d91395b1653393532028-Calvin-Klein-Jeans-Men-Black-T-shirt-211653393531443-1.jpg",
+  },
+  {
+    brand: "ZOYA GARMENTSS ",
+    name: "Grey Rugged Trousers",
+    price: "415",
+    size: "X,M,L,XX,XXL",
+    productID: "men2",
+    catagory: "pant",
+    img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5415202/2018/5/23/7a32e5c1-6ac6-4219-984e-63cb68497fa21527075068613-Roadster-Men-Trousers-6171527075067295-1.jpg",
+  },
+  {
+    brand: "Vishudh",
+    name: "Wicked Black Jeans",
+    price: "400",
+    size: "X,XX,XXL",
+    productID: "men1",
+    catagory: "pant",
+    img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/7610386/2022/4/19/c6fe5c9f-9a2b-46c9-90cc-6479f7d8ea581650366004453HRXbyHrithikRoshanMenBlackSolidRapidDryRunningJoggers2.jpg",
+  },
+]
+let productsCont=document.getElementById("products");
+let filter=document.getElementById("filter");
+let cartLs=JSON.parse(localStorage.getItem("cart-page")) || [];
+function displayProducts(productData=[]){
+    productsCont.innerHTML="";
+productData.forEach(function(element){
+    let product=document.createElement("div");
+    let img=document.createElement("img");
+    img.src=element.img;
+    let price=document.createElement("p");
+    price.textContent=element.price;
+    let name=document.createElement("h2");
+    name.textContent=element.brand;
+    let category=document.createElement("p");
+    category.textContent=element.catagory;
+    let brand=document.createElement("p");
+    brand.textContent=element.name;
+    let addToCart=document.createElement("button");
+    addToCart.innerText="Add To Cart"
+    addToCart.addEventListener("click",function(){
+       if(addToCartFunc(element.productID)===true){
+           alert("Product Added to Cart Successfully")
+           cartLs.push(element);
+           localStorage.setItem("cart-page",JSON.stringify(cartLs));
+       }else{
+        alert("product already in the cart");
+       }
+        
+    })
+    product.append(img,name,brand,price,addToCart);
+    productsCont.append(product)
+})
+}
+
+displayProducts(productData);
+
+filter.addEventListener("change",function(){
+    if(filter.value==="all"){
+        displayProducts(productData);
+    }else{
+        let filtered=productData.filter
+        (function(element){
+            return element.catagory===filter.value;
+        })
+        displayProducts(filtered);
+    }
+})
+function addToCartFunc(id){
+for(let i=0;i<cartLs.length;i++)
+{
+    if(cartLs[i].productID == id){
+        return false;
+    }
+}
+return true;
+}
+</script>
+</html>
